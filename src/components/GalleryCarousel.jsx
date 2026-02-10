@@ -94,7 +94,7 @@ export default function GalleryCarousel({
         <section className={className}>
             {/* Minimal section header */}
             <div className="max-w-3xl text-center mx-auto">
-                <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold text-(--elite-green)">
+                <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
                     {title}
                 </h2>
                 <p className="mt-4 text-lg text-slate-600">
@@ -210,7 +210,7 @@ export default function GalleryCarousel({
                                             className={`
                         shrink-0 overflow-hidden rounded-xl
                         border transition
-                        ${active ? "border-(--elite-blue)" : "border-slate-200 hover:border-slate-300"}
+                        ${active ? "border-(--plumbing-blue)" : "border-slate-200 hover:border-slate-300"}
                       `}
                                         >
                                             <img

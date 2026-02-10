@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-import logo from "@/assets/transparent-logo.png";
+import logo from "@/assets/logo-flat.jpg";
 
 import GalleryCarousel from "@/components/GalleryCarousel";
 import Services from "@/components/Services";
 import ContactForm from "@/components/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
+import { PLUMBING } from "./lib/brand";
 
 /** Edit these later */
 const BRAND = {
@@ -15,7 +16,7 @@ const BRAND = {
     phoneDisplay: "(314) 276-8617",
     phoneTel: "++31412768617",
     email: "company@companymail.com",
-    serviceAreas: ["St. Louis","Saint Peters", "O'Fallon", "St. Charles", "Wentzville", "Lake St. Louis"],
+    serviceAreas: ["St. Louis", "Saint Peters", "O'Fallon", "St. Charles", "Wentzville", "Lake St. Louis"],
 };
 
 export default function MMPlumbing() {
@@ -40,7 +41,7 @@ export default function MMPlumbing() {
                             className="rounded-full px-5 py-2 shadow-sm hover:shadow-md"
                             onClick={() => setContactOpen(true)}
                         >
-                            Contact
+                            Contact Us
                         </Button>
 
                         <a
@@ -49,8 +50,8 @@ export default function MMPlumbing() {
                 hidden sm:flex items-center
                 rounded-full px-4 py-2 text-sm font-semibold
                 border border-slate-200 bg-white
-                text-(--elite-blue)
-                hover:bg-(--elite-blue)/10
+                text-(--plumbing-blue)
+                hover:bg-(--plumbing-blue)/10
                 transition shadow-sm
               "
                         >
@@ -61,7 +62,7 @@ export default function MMPlumbing() {
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
                                 strokeWidth={2}
-                                style={{ color: ELITE.blue }}
+                                style={{ color: PLUMBING.blue }}
                             >
                                 <path
                                     strokeLinecap="round"
@@ -79,8 +80,8 @@ export default function MMPlumbing() {
                 sm:hidden inline-flex items-center
                 rounded-full px-4 py-2 text-sm font-semibold
                 border border-slate-200 bg-white
-                text-(--elite-blue)
-                hover:bg-(--elite-blue)/10
+                text-(--plumbing-blue)
+                hover:bg-(--plumbing-blue)/10
                 transition shadow-sm
               "
                         >
@@ -105,38 +106,55 @@ export default function MMPlumbing() {
                 />
 
                 {/* Content */}
-                <div className="relative w-full px-4">
-                    <div className="mx-auto max-w-6xl">
+                <div className="relative w-full px-4 py-18">
+                    <div className="mx-auto max-w-6xl py-8">
                         <div className="mx-auto max-w-3xl text-center">
                             <div className="inline-block relative">
-                                {/* Ribbon background */}
-
-                                <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold text-(--plumbing-red)">
-                                    Cleaning & Landscaping{" "}
+                                {/* Ribbon background (optional) */}
+                                <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
+                                    Reliable Plumbing
                                 </h1>
-
+                                <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold text-(--plumbing-blue)">
+                                    Local Experts You Can Trust
+                                </h1>
                             </div>
+
                             <p className="mt-6 text-lg text-slate-600">
-                                Professional cleaning for offices and homes, plus reliable landscaping
-                                to keep your property sharp year-round.
+                                At <span className="font-semibold">M&amp;M Plumbing</span>, we treat your home like our own.
+                                From urgent repairs to installations, we deliver honest pricing, quality workmanship, and
+                                service done right the first time.
                             </p>
 
+                            {/* Trust badges (highly recommended) */}
+                            <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-sm text-slate-600">
+                                <span className="rounded-full border border-slate-200 bg-(--plumbing-blue)/70 text-white px-3 py-1">
+                                    Licensed &amp; Insured
+                                </span>
+                                <span className="rounded-full border border-slate-200 bg-(--plumbing-blue)/70 text-white px-3 py-1">
+                                    Emergency Service Available
+                                </span>
+                                <span className="rounded-full border border-slate-200 bg-(--plumbing-blue)/70 text-white px-3 py-1">
+                                    Upfront, Honest Pricing
+                                </span>
+                                <span className="rounded-full border border-slate-200 bg-(--plumbing-blue)/70 text-white px-3 py-1">
+                                    Residential &amp; Commercial
+                                </span>
+                            </div>
+
                             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-                                <Button
+                                {/* <Button
                                     variant="primary"
                                     className="px-6 py-3"
                                     onClick={() => setContactOpen(true)}
                                 >
-                                    Get a Free Estimate
-                                </Button>
+                                    Contact Us
+                                </Button> */}
 
                                 <Button
                                     variant="outline"
                                     className="px-6 py-3"
                                     onClick={() =>
-                                        document
-                                            .getElementById("services")
-                                            ?.scrollIntoView({ behavior: "smooth" })
+                                        document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
                                     }
                                 >
                                     View Services
@@ -144,7 +162,7 @@ export default function MMPlumbing() {
                             </div>
 
                             <div className="mt-6 text-sm text-slate-500">
-                                Free estimates • Reliable scheduling • Fully focused on quality &amp; care
+                                Free estimates • Reliable solutions • Quality &amp; care you can count on
                             </div>
                         </div>
                     </div>
@@ -157,28 +175,31 @@ export default function MMPlumbing() {
                 <div className="max-w-6xl mx-auto">
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center">
-                            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold text-(--elite-green)">
-                                Locally owned and service-driven
+                            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
+                                Locally owned. Service driven.
                             </h2>
 
                             <div className="mt-4 text-lg text-slate-600">
-                                Consistent quality, clear communication, and respectful workmanship.
+                                Honest plumbing, clear communication, and dependable results.
                             </div>
                         </div>
 
                         <div className="mt-8 space-y-4 text-slate-700 leading-relaxed">
                             <p>
-                                At {BRAND.name}, we treat every property with care and precision. Our cleaning and landscaping services
-                                are built on detailed checklists, dependable scheduling, and a commitment to leaving every space looking
-                                its best—every time.
+                                At {BRAND.name}, we believe great plumbing starts with doing things the right way.
+                                We approach every home and business with care, professionalism, and attention to detail—
+                                from the first call to the final walkthrough.
                             </p>
 
                             <p>
-                                Whether it’s ongoing maintenance or a one-time refresh, you’ll see the difference in our consistency and results.
+                                Our services are built on accurate diagnostics, upfront recommendations, and quality
+                                workmanship you can trust. Whether it’s a small repair, routine maintenance, or a more
+                                complex plumbing issue, we focus on long-term solutions—not shortcuts.
                             </p>
 
                             <p className="italic text-slate-600">
-                                Our mission is excellence from beginning to end—accurate estimates, reliable scheduling, and a property that looks its best.
+                                Our goal is simple: show up on time, communicate clearly, and leave your plumbing
+                                system working exactly as it should.
                             </p>
                         </div>
 
@@ -196,6 +217,7 @@ export default function MMPlumbing() {
                     </div>
                 </div>
             </section>
+
 
             {/* Services */}
             <Services />

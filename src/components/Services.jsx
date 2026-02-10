@@ -1,107 +1,107 @@
 import { useMemo } from "react";
 import {
-  Sparkles,
-  Building2,
+  Wrench,
+  Droplets,
+  ShowerHead,
+  Flame,
+  Toilet,
+  Trash2,
+  Gauge,
   Home,
-  ClipboardCheck,
-  Leaf,
-  Scissors,
-  Shovel,
-  Trees,
 } from "lucide-react";
 
 export default function Services() {
   const services = useMemo(
     () => [
-      // CLEANING
+      // PLUMBING
       {
-        category: "Cleaning",
-        title: "Office Cleaning",
-        icon: Building2,
-        accent: "blue",
+        category: "Plumbing",
+        title: "General Repairs",
+        icon: Wrench,
+        accent: "red",
         items: [
-          "Restrooms, breakrooms, and common areas",
-          "Trash & recycling + high-touch disinfection",
-          "Flexible scheduling (weekly / nightly)",
+          "Leaky faucets, valves, and supply lines",
+          "Toilet repairs and running water fixes",
+          "Troubleshooting + reliable repairs",
         ],
       },
       {
-        category: "Cleaning",
-        title: "House Cleaning",
-        icon: Home,
-        accent: "blue",
+        category: "Plumbing",
+        title: "Fixture Installation",
+        icon: ShowerHead,
+        accent: "red",
         items: [
-          "Kitchens, bathrooms, bedrooms, living areas",
-          "Dusting, vacuuming, mopping, and detailing",
-          "Recurring plans available",
+          "Faucets, sinks, toilets, and showers",
+          "Replace worn or outdated fixtures",
+          "Clean install + tested before we leave",
         ],
       },
       {
-        category: "Cleaning",
-        title: "Deep Cleaning",
-        icon: Sparkles,
-        accent: "blue",
+        category: "Plumbing",
+        title: "Water Heaters",
+        icon: Flame,
+        accent: "red",
         items: [
-          "Detail-focused top-to-bottom cleaning",
-          "Baseboards, corners, and buildup areas",
-          "Great for seasonal resets",
+          "Repair or replace standard water heaters",
+          "Hot water issues + safety checks",
+          "Sizing guidance for your home",
         ],
       },
       {
-        category: "Cleaning",
-        title: "Move In / Move Out",
-        icon: ClipboardCheck,
-        accent: "blue",
+        category: "Plumbing",
+        title: "Leak Detection",
+        icon: Gauge,
+        accent: "red",
         items: [
-          "Rental turnovers and listing prep",
-          "Cabinets, appliances exterior, bathrooms detailed",
-          "Final clean that feels “new”",
+          "Find hidden leaks and water loss fast",
+          "Pinpoint likely failure points",
+          "Recommendations + next-step options",
         ],
       },
 
-      // LANDSCAPING
+      // DRAIN & SEWER
       {
-        category: "Landscaping",
-        title: "Lawn Mowing & Edging",
-        icon: Leaf,
-        accent: "green",
+        category: "Drain & Sewer",
+        title: "Drain Cleaning",
+        icon: Droplets,
+        accent: "blue",
         items: [
-          "Clean cuts + crisp edges",
-          "Driveways/sidewalks blown off",
-          "Scheduled weekly or biweekly",
+          "Kitchen, bathroom, and floor drains",
+          "Clear clogs + improve flow",
+          "Maintenance options available",
         ],
       },
       {
-        category: "Landscaping",
-        title: "Trimming & Pruning",
-        icon: Scissors,
-        accent: "green",
+        category: "Drain & Sewer",
+        title: "Toilet & Main Line Clogs",
+        icon: Toilet,
+        accent: "blue",
         items: [
-          "Shrubs, hedges, and light tree trimming",
-          "Shape and tidy overgrowth",
-          "Debris cleanup included",
+          "Stoppages, backups, and slow drains",
+          "Root / buildup troubleshooting",
+          "Get your system flowing again",
         ],
       },
       {
-        category: "Landscaping",
-        title: "Mulch & Bed Refresh",
-        icon: Shovel,
-        accent: "green",
+        category: "Drain & Sewer",
+        title: "Garbage Disposal",
+        icon: Trash2,
+        accent: "blue",
         items: [
-          "Bed edging and refresh for curb appeal",
-          "Mulch install and light weed pulling",
-          "Clean finish around plants and borders",
+          "Repair, replace, and new installs",
+          "Jam removal and performance checks",
+          "Proper operation + leak inspection",
         ],
       },
       {
-        category: "Landscaping",
-        title: "Seasonal Cleanup",
-        icon: Trees,
-        accent: "green",
+        category: "Drain & Sewer",
+        title: "Residential & Commercial",
+        icon: Home,
+        accent: "blue",
         items: [
-          "Leaf/branch pickup and haul-away options",
-          "Spring or fall cleanups",
-          "Final blow-down for a polished look",
+          "Homes, offices, rentals, and small businesses",
+          "One-time service or ongoing maintenance",
+          "Fast scheduling + dependable work",
         ],
       },
     ],
@@ -109,31 +109,34 @@ export default function Services() {
   );
 
   return (
-    <section id="services" className="py-8 px-4 bg-green-50">
+    <section id="services" className="py-8 px-4 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="max-w-3xl text-center mx-auto">
-          <p className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold text-(--elite-green)">
+          <p className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
             Services
           </p>
         </div>
+
         {/* Grid */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((service) => {
             const Icon = service.icon;
-            const isGreen = service.accent === "green";
+            const isRed = service.accent === "red";
 
-            const accent = isGreen
-              ? "text-[color:var(--elite-green)]"
-              : "text-[color:var(--elite-blue)]";
+            // If you don't have --plumbing-blue, change it to slate:
+            // "text-slate-700" / "bg-slate-100" etc.
+            const accent = isRed
+              ? "text-(--plumbing-red)"
+              : "text-[color:var(--plumbing-blue)]";
 
-            const chip = isGreen
-              ? "bg-[color:var(--elite-green)]/10 text-[color:var(--elite-green)]"
-              : "bg-[color:var(--elite-blue)]/10 text-[color:var(--elite-blue)]";
+            const chip = isRed
+              ? "bg-[color:var(--plumbing-red)]/10 text-(--plumbing-red)"
+              : "bg-[color:var(--plumbing-blue)]/10 text-[color:var(--plumbing-blue)]";
 
-            const dot = isGreen
-              ? "bg-[color:var(--elite-green)]"
-              : "bg-[color:var(--elite-blue)]";
+            const dot = isRed
+              ? "bg-(--plumbing-red)"
+              : "bg-[color:var(--plumbing-blue)]";
 
             return (
               <div
@@ -148,11 +151,13 @@ export default function Services() {
               >
                 {/* Top row */}
                 <div className="flex items-center justify-between gap-3">
-                  <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${chip}`}>
+                  <span
+                    className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${chip}`}
+                  >
                     {service.category}
                   </span>
 
-                  <Icon className={`${accent}`} size={28} />
+                  <Icon className={accent} size={28} />
                 </div>
 
                 <h3 className="mt-4 text-lg font-semibold text-slate-900">

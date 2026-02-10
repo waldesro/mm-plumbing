@@ -8,20 +8,20 @@ export const Button = ({ variant = "primary", className, ...props }) => {
 
   const variants = {
     primary:
-      "bg-[var(--elite-green)] text-white border-[var(--elite-blue)] " +
-      "hover:opacity-95 focus:ring-[var(--elite-blue)]/40",
+      "bg-[var(--plumbing-red)] text-white border-[var(--plumbing-blue)] " +
+      "hover:opacity-95 focus:ring-[var(--plumbing-blue)]/40",
 
     outline:
-      "bg-white text-[var(--elite-blue)] border-[var(--elite-blue)]/30 " +
-      "hover:bg-[var(--elite-blue)]/10 focus:ring-[var(--elite-blue)]/30",
+      "bg-white text-[var(--plumbing-blue)] border-[var(--plumbing-blue)]/30 " +
+      "hover:bg-[var(--plumbing-blue)]/10 focus:ring-[var(--plumbing-blue)]/30",
 
     soft:
-      "bg-[var(--elite-blue)]/10 text-[var(--elite-blue)] border-[var(--elite-blue)]/20 " +
-      "hover:bg-[var(--elite-blue)]/20 focus:ring-[var(--elite-blue)]/30",
+      "bg-[var(--plumbing-blue)]/10 text-[var(--plumbing-blue)] border-[var(--plumbing-blue)]/20 " +
+      "hover:bg-[var(--plumbing-blue)]/20 focus:ring-[var(--plumbing-blue)]/30",
 
     success:
-      "bg-[var(--elite-green)] text-white border-[var(--elite-green)] " +
-      "hover:opacity-95 focus:ring-[var(--elite-green)]/40",
+      "bg-[var(--plumbing-red)] text-white border-[var(--plumbing-red)] " +
+      "hover:opacity-95 focus:ring-[var(--plumbing-red)]/40",
   };
 
   return (
