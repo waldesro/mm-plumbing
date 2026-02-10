@@ -31,7 +31,7 @@ export default function MMPlumbing() {
                     <img
                         src={logo}
                         alt={`${BRAND.name} logo`}
-                        className="h-14 sm:h-16 md:h-18 w-auto object-contain"
+                        className="h-16 sm:h-16 md:h-18 w-auto object-contain"
                     />
 
 
@@ -128,7 +128,7 @@ export default function MMPlumbing() {
                             {/* Trust badges (highly recommended) */}
                             <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-sm text-slate-600">
                                 <span className="rounded-full border border-slate-200 bg-(--plumbing-blue)/70 text-white px-3 py-1">
-                                    Licensed &amp; Insured
+                                    Licensed, Insured &amp; Bonded Since 2004
                                 </span>
                                 <span className="rounded-full border border-slate-200 bg-(--plumbing-blue)/70 text-white px-3 py-1">
                                     Emergency Service Available

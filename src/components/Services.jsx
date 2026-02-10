@@ -49,7 +49,7 @@ export default function Services() {
       },
       {
         category: "Plumbing",
-        title: "New Construction Plumbing",
+        title: "New Construction",
         icon: Building2,
         accent: "red",
         items: [
@@ -70,7 +70,6 @@ export default function Services() {
         ],
       },
 
-      // ✅ NEW: Water Pressure
       {
         category: "Plumbing",
         title: "Water Pressure Issues",
