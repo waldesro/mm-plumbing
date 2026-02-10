@@ -98,7 +98,7 @@ export default function GalleryCarousel({
                     {title}
                 </h2>
                 <p className="mt-4 text-lg text-slate-600">
-                    A few examples of recent cleaning and landscaping projects.
+                    A few examples of recent projects.
                 </p>
             </div>
 

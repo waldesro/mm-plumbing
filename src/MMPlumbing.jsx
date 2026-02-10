@@ -16,7 +16,7 @@ const BRAND = {
     phoneDisplay: "(314) 276-8617",
     phoneTel: "++31412768617",
     email: "company@companymail.com",
-    serviceAreas: ["St. Louis", "Saint Peters", "O'Fallon", "St. Charles", "Wentzville", "Lake St. Louis"],
+    serviceAreas: ["St. Charles", "St. Peters", "O'Fallon", "Wentzville", "St. Louis County"],
 };
 
 export default function MMPlumbing() {

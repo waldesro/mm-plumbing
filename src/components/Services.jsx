@@ -4,7 +4,7 @@ import {
   Droplets,
   ShowerHead,
   Flame,
-  Toilet,
+  Building2,
   Trash2,
   Gauge,
   Home,
@@ -49,8 +49,19 @@ export default function Services() {
       },
       {
         category: "Plumbing",
+        title: "New Construction Plumbing",
+        icon: Building2,
+        accent: "red",
+        items: [
+          "Residential and commercial new builds",
+          "Complete rough-in and final plumbing",
+          "Code-compliant installs and inspections ready",
+        ],
+      },
+      {
+        category: "Plumbing",
         title: "Leak Detection",
-        icon: Gauge,
+        icon: Droplets,
         accent: "red",
         items: [
           "Find hidden leaks and water loss fast",
@@ -59,29 +70,19 @@ export default function Services() {
         ],
       },
 
-      // DRAIN & SEWER
+      // ✅ NEW: Water Pressure
       {
-        category: "Drain & Sewer",
-        title: "Drain Cleaning",
-        icon: Droplets,
-        accent: "blue",
+        category: "Plumbing",
+        title: "Water Pressure Issues",
+        icon: Gauge,
+        accent: "red",
         items: [
-          "Kitchen, bathroom, and floor drains",
-          "Clear clogs + improve flow",
-          "Maintenance options available",
+          "Low pressure troubleshooting (whole home or single fixture)",
+          "Pressure regulator (PRV) checks and replacement",
+          "Identify restrictions, leaks, or buildup",
         ],
       },
-      {
-        category: "Drain & Sewer",
-        title: "Toilet & Main Line Clogs",
-        icon: Toilet,
-        accent: "blue",
-        items: [
-          "Stoppages, backups, and slow drains",
-          "Root / buildup troubleshooting",
-          "Get your system flowing again",
-        ],
-      },
+
       {
         category: "Drain & Sewer",
         title: "Garbage Disposal",
@@ -107,6 +108,7 @@ export default function Services() {
     ],
     []
   );
+
 
   return (
     <section id="services" className="py-8 px-4 bg-slate-50">
