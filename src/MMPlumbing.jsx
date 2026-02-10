@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import logo from "@/assets/logo-flat.jpg";
+import logo from "@/assets/logo-flat-transparent.png";
 
 import GalleryCarousel from "@/components/GalleryCarousel";
 import Services from "@/components/Services";
@@ -14,7 +14,7 @@ const BRAND = {
     name: "M&M Plumbing",
     tagline: "Plumbing Services",
     phoneDisplay: "(314) 276-8617",
-    phoneTel: "++31412768617",
+    phoneTel: "+13142768617",
     email: "company@companymail.com",
     serviceAreas: ["St. Charles", "St. Peters", "O'Fallon", "Wentzville", "St. Louis County"],
 };
@@ -22,19 +22,41 @@ const BRAND = {
 export default function MMPlumbing() {
     const [contactOpen, setContactOpen] = useState(false);
 
+    // One-logo rule:
+    // - at top: show floating hero logo (left), hide header logo
+    // - after scroll: hide floating hero logo, show header logo
+    const heroSentinelRef = useRef(null);
+    const [scrolledPastHeroTop, setScrolledPastHeroTop] = useState(false);
+
+    useEffect(() => {
+        const el = heroSentinelRef.current;
+        if (!el) return;
+
+        const obs = new IntersectionObserver(
+            ([entry]) => setScrolledPastHeroTop(!entry.isIntersecting),
+            { threshold: 0.01 }
+        );
+
+        obs.observe(el);
+        return () => obs.disconnect();
+    }, []);
+
     return (
         <div className="min-h-screen w-full bg-slate-50 text-slate-900">
-            {/* Header */}
+            {/* Header (logo left, buttons right; logo hidden until scroll) */}
             <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur border-b border-slate-200">
                 <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between gap-3">
-                    {/* Logo */}
+                    {/* Header Logo (LEFT) — hidden while big hero logo is visible */}
                     <img
                         src={logo}
                         alt={`${BRAND.name} logo`}
-                        className="h-16 sm:h-16 md:h-18 w-auto object-contain"
+                        className={[
+                            "h-16 sm:h-16 md:h-18 w-auto object-contain transition-all duration-300",
+                            scrolledPastHeroTop ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none",
+                        ].join(" ")}
                     />
 
-
+                    {/* Buttons (RIGHT) */}
                     <div className="flex items-center gap-2">
                         <Button
                             variant="primary"
@@ -73,7 +95,7 @@ export default function MMPlumbing() {
                             {BRAND.phoneDisplay}
                         </a>
 
-                        {/* Mobile: short call button */}
+                        {/* Mobile short call button */}
                         <a
                             href={`tel:${BRAND.phoneTel}`}
                             className="
@@ -92,25 +114,38 @@ export default function MMPlumbing() {
             </header>
 
             {/* HERO */}
-            <section className="relative min-h-[70vh] flex items-center">
+            <section className="relative min-h-[70vh] flex items-center pt-24">
+                {/* Sentinel at top of hero */}
+                <div ref={heroSentinelRef} className="absolute top-0 left-0 h-1 w-full" />
+
                 {/* Background image */}
                 <div
                     className="absolute inset-0 bg-[url('/images/background.png')] bg-cover bg-center"
                     aria-hidden="true"
                 />
 
-                {/* Dark/soft overlay (VERY important for readability) */}
-                <div
-                    className="absolute inset-0 bg-white/70"
-                    aria-hidden="true"
-                />
+                {/* Soft overlay for readability */}
+                <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
+
+                {/* BIG floating hero logo (LEFT) — hidden after scroll */}
+                {/* BIG floating hero logo (RIGHT) — hidden after scroll */}
+                <div className="pointer-events-none absolute right-6 sm:right-10 md:right-14 top-24 sm:top-24 z-10">
+                    <img
+                        src={logo}
+                        alt={`${BRAND.name} logo`}
+                        className={[
+                            "w-auto object-contain drop-shadow-xl transition-all duration-300",
+                            "h-35 sm:h-42.5 md:h-52.5",
+                            scrolledPastHeroTop ? "opacity-0 -translate-y-2 scale-95" : "opacity-100 translate-y-0 scale-100",
+                        ].join(" ")}
+                    />
+                </div>
 
                 {/* Content */}
                 <div className="relative w-full px-4 py-18">
                     <div className="mx-auto max-w-6xl py-8">
                         <div className="mx-auto max-w-3xl text-center">
                             <div className="inline-block relative">
-                                {/* Ribbon background (optional) */}
                                 <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
                                     Reliable Plumbing
                                 </h1>
@@ -125,7 +160,7 @@ export default function MMPlumbing() {
                                 service done right the first time.
                             </p>
 
-                            {/* Trust badges (highly recommended) */}
+                            {/* Trust badges */}
                             <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-sm text-slate-600">
                                 <span className="rounded-full border border-slate-200 bg-(--plumbing-blue)/70 text-white px-3 py-1">
                                     Licensed, Insured &amp; Bonded Since 2004
@@ -142,14 +177,6 @@ export default function MMPlumbing() {
                             </div>
 
                             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-                                {/* <Button
-                                    variant="primary"
-                                    className="px-6 py-3"
-                                    onClick={() => setContactOpen(true)}
-                                >
-                                    Contact Us
-                                </Button> */}
-
                                 <Button
                                     variant="outline"
                                     className="px-6 py-3"
@@ -168,7 +195,6 @@ export default function MMPlumbing() {
                     </div>
                 </div>
             </section>
-
 
             {/* About Us */}
             <section className="py-8 px-4 bg-white">
@@ -217,7 +243,6 @@ export default function MMPlumbing() {
                     </div>
                 </div>
             </section>
-
 
             {/* Services */}
             <Services />
