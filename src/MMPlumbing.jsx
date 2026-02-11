@@ -4,6 +4,7 @@ import logo from "@/assets/logo-cropped.png";
 
 import WorkGallery from "@/components/WorkGallery";
 import Services from "@/components/Services";
+import ReviewSection from "@/components/GoogleReviews";
 import ContactForm from "@/components/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
@@ -11,11 +12,11 @@ import { PLUMBING } from "./lib/brand";
 
 /** Edit these later */
 const BRAND = {
-    name: "M&M Plumbing",
+    name: "M&M Plumbing LLC",
     tagline: "Plumbing Services",
     phoneDisplay: "(314) 276-8617",
     phoneTel: "+13142768617",
-    email: "company@companymail.com",
+    email: "mcroy@msquaredllc.com",
     serviceAreas: ["St. Charles", "St. Peters", "O'Fallon", "Wentzville", "St. Louis County"],
 };
 
@@ -252,6 +253,18 @@ export default function MMPlumbing() {
                 </div>
             </section>
 
+            {/* Reviews Section */}
+            <section className="py-8 px-4 bg-white">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center">
+                            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
+                                What our customers say
+                            </h2>
+                        </div>
+                    <ReviewSection />
+                </div>
+            </section>
+            
 
             {/* Footer */}
             <footer className="py-10 text-center text-sm text-slate-400 bg-white">
