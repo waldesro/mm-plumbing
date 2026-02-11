@@ -184,12 +184,14 @@ export default function ContactForm({ onSuccess }) {
             Missing <strong>VITE_RECAPTCHA_SITE_KEY</strong> in your environment.
           </p>
         ) : (
-          <div className="mx-auto">
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={RECAPTCHA_SITE_KEY}
-              onChange={(token) => setCaptchaToken(token)}
-            />
+          <div className="mx-auto w-full overflow-x-auto">
+            <div className="min-w-76 w-max mx-auto">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={RECAPTCHA_SITE_KEY}
+                onChange={(token) => setCaptchaToken(token)}
+              />
+            </div>
           </div>
         )}
 
