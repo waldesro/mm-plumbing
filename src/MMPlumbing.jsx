@@ -197,7 +197,7 @@ export default function MMPlumbing() {
                                 Locally owned
                             </h2>
                             <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold text-(--plumbing-blue)">
-                                Service driven
+                                Service Driven
                             </h2>
                             <div className="mt-4 text-lg text-slate-600">
                                 Honest plumbing, clear communication, and dependable results.
@@ -258,7 +258,7 @@ export default function MMPlumbing() {
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center">
                             <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
-                                What our customers say
+                                What Our Customers Say
                             </h2>
                         </div>
                     <ReviewSection />
