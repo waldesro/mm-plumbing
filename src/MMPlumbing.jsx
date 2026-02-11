@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import logo from "@/assets/logo-cropped.png";
 
 import GalleryCarousel from "@/components/GalleryCarousel";
+import WorkGallery from "@/components/WorkGallery";
 import Services from "@/components/Services";
 import ContactForm from "@/components/ContactForm";
 import { Button } from "@/components/ui/Button";
@@ -193,9 +194,11 @@ export default function MMPlumbing() {
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center">
                             <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
-                                Locally owned. Service driven.
+                                Locally owned
                             </h2>
-
+                            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold text-(--plumbing-blue)">
+                                Service driven
+                            </h2>
                             <div className="mt-4 text-lg text-slate-600">
                                 Honest plumbing, clear communication, and dependable results.
                             </div>
@@ -241,9 +244,15 @@ export default function MMPlumbing() {
             {/* Gallery */}
             <section className="py-8 px-4 bg-white">
                 <div className="max-w-6xl mx-auto">
-                    <GalleryCarousel title="Work Gallery" subtitle="Gallery" autoPlay autoPlayInterval={5000} />
+                    <WorkGallery
+                        title="Work Gallery"
+                        subtitle="A few examples of recent projects."
+                        autoPlay
+                        autoPlayInterval={5000}
+                    />
                 </div>
             </section>
+
 
             {/* Footer */}
             <footer className="py-10 text-center text-sm text-slate-400 bg-white">
