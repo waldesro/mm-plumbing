@@ -103,7 +103,7 @@ export default function GalleryCarousel({
             {(title) && (
 
                 <div className="mx-auto mb-6 max-w-3xl text-center">
-                    {title ? <h2 className="text-4xl sm:text-5xl font-bold text-blue-900 leading-tight mb-6 text-center">{title}</h2> : null}
+                    {title ? <h2 className="text-4xl sm:text-5xl font-bold text-(--plumbing-red) leading-tight mb-6 text-center">{title}</h2> : null}
                 </div>
             )}
 
