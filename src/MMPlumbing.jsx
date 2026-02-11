@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 import logo from "@/assets/logo-cropped.png";
 
-import GalleryCarousel from "@/components/GalleryCarousel";
 import WorkGallery from "@/components/WorkGallery";
 import Services from "@/components/Services";
 import ContactForm from "@/components/ContactForm";
