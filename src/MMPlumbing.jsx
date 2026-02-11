@@ -254,7 +254,7 @@ export default function MMPlumbing() {
             </section>
 
             {/* Reviews Section */}
-            <section className="py-8 px-4 bg-white">
+            <section className="py-8 px-4 bg-(--plumbing-blue)/10">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center">
                             <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
