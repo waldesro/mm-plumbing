@@ -134,7 +134,7 @@ export default function MMPlumbing() {
                 <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
 
                 {/* Content */}
-                <div className="relative w-full px-4 py-18">
+                <div className="relative w-full">
                     <div className="mx-auto max-w-6xl py-8">
                         <div className="mx-auto max-w-3xl text-center">
                             <div className="inline-block relative">
@@ -194,7 +194,7 @@ export default function MMPlumbing() {
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center">
                             <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
-                                Locally owned
+                                Locally Owned
                             </h2>
                             <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold text-(--plumbing-blue)">
                                 Service Driven

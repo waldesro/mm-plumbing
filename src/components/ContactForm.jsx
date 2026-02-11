@@ -20,10 +20,12 @@ export default function ContactForm({ onSuccess }) {
   const RING = "rgba(220, 38, 38, 0.22)"; // soft red focus ring fallback
 
   const inputClass =
-    "w-full border border-slate-300 p-3 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-0";
+    "w-full border border-slate-300 px-3 py-2.5 rounded-xl shadow-sm text-sm " +
+    "focus:outline-none focus:ring-2 focus:ring-offset-0";
 
   const selectClass =
-    "w-full border border-slate-300 p-3 rounded-xl shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-offset-0";
+    "w-full border border-slate-300 px-3 py-2.5 rounded-xl shadow-sm bg-white text-sm " +
+    "focus:outline-none focus:ring-2 focus:ring-offset-0";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,9 +68,9 @@ export default function ContactForm({ onSuccess }) {
   };
 
   return (
-    // ✅ FIX: constrain + center the form so it responds to page size
+    // Compact width + responsive padding
     <div className="w-full max-w-xl mx-auto px-2 sm:px-0">
-      <form ref={formRef} onSubmit={handleSubmit} className="grid gap-4 mt-4">
+      <form ref={formRef} onSubmit={handleSubmit} className="grid gap-3 mt-3">
         <input
           type="text"
           name="user_name"
@@ -109,16 +111,10 @@ export default function ContactForm({ onSuccess }) {
           </option>
           <option value="General Plumbing Repair">General Plumbing Repair</option>
           <option value="Drain Cleaning / Clog">Drain Cleaning / Clog</option>
-          <option value="Leak Detection / Leak Repair">
-            Leak Detection / Leak Repair
-          </option>
-          <option value="Toilet Repair / Replacement">
-            Toilet Repair / Replacement
-          </option>
+          <option value="Leak Detection / Leak Repair">Leak Detection / Leak Repair</option>
+          <option value="Toilet Repair / Replacement">Toilet Repair / Replacement</option>
           <option value="Faucet / Fixture Install">Faucet / Fixture Install</option>
-          <option value="Water Heater Repair / Replace">
-            Water Heater Repair / Replace
-          </option>
+          <option value="Water Heater Repair / Replace">Water Heater Repair / Replace</option>
           <option value="Garbage Disposal">Garbage Disposal</option>
           <option value="Other">Other</option>
         </select>
@@ -136,9 +132,7 @@ export default function ContactForm({ onSuccess }) {
           </option>
           <option value="Residential">Residential</option>
           <option value="Commercial">Commercial</option>
-          <option value="Rental / Property Management">
-            Rental / Property Management
-          </option>
+          <option value="Rental / Property Management">Rental / Property Management</option>
           <option value="Other">Other</option>
         </select>
 
@@ -153,15 +147,13 @@ export default function ContactForm({ onSuccess }) {
           <option value="" disabled>
             How urgent is this?
           </option>
-          <option value="Emergency (Active leak / backup)">
-            Emergency (Active leak / backup)
-          </option>
+          <option value="Emergency (Active leak / backup)">Emergency (Active leak / backup)</option>
           <option value="Today">Today</option>
           <option value="This week">This week</option>
           <option value="Not urgent / quote">Not urgent / quote</option>
         </select>
 
-        {/* Optional: ZIP (helps routing/estimates) */}
+        {/* Optional: ZIP */}
         <input
           type="text"
           name="service_zip"
@@ -174,7 +166,7 @@ export default function ContactForm({ onSuccess }) {
           name="message"
           placeholder="Describe the issue (where it’s happening, when it started, access notes, etc.)"
           required
-          rows={5}
+          rows={3}
           className={inputClass}
           style={{ "--tw-ring-color": RING }}
         />
@@ -184,21 +176,20 @@ export default function ContactForm({ onSuccess }) {
             Missing <strong>VITE_RECAPTCHA_SITE_KEY</strong> in your environment.
           </p>
         ) : (
-          <div className="mx-auto w-full overflow-x-auto">
-            <div className="min-w-76 w-max mx-auto">
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={RECAPTCHA_SITE_KEY}
-                onChange={(token) => setCaptchaToken(token)}
-              />
-            </div>
+          // Slightly smaller captcha + tighter spacing
+          <div className="mx-auto scale-[0.92] origin-top">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={RECAPTCHA_SITE_KEY}
+              onChange={(token) => setCaptchaToken(token)}
+            />
           </div>
         )}
 
         <button
           type="submit"
           disabled={sending}
-          className="w-full text-white px-6 py-3 rounded-xl transition disabled:opacity-60"
+          className="w-full text-white px-5 py-2 rounded-xl text-sm font-semibold transition disabled:opacity-60"
           style={{ backgroundColor: PRIMARY }}
           onMouseOver={(e) => (e.currentTarget.style.opacity = "0.92")}
           onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
@@ -207,12 +198,12 @@ export default function ContactForm({ onSuccess }) {
         </button>
 
         {sent && (
-          <p className="mt-1 font-medium text-center" style={{ color: SUCCESS }}>
+          <p className="mt-1 text-sm font-medium text-center" style={{ color: SUCCESS }}>
             Message sent successfully!
           </p>
         )}
 
-        {error && <p className="text-red-600 mt-1 text-center">{error}</p>}
+        {error && <p className="text-red-600 mt-1 text-sm text-center">{error}</p>}
       </form>
     </div>
   );
