@@ -12,7 +12,7 @@ import { PLUMBING } from "./lib/brand";
 
 /** Edit these later */
 const BRAND = {
-    name: "M&M Plumbing LLC",
+    name: "M&M Plumbing",
     tagline: "Plumbing Services",
     phoneDisplay: "(314) 276-8617",
     phoneTel: "+13142768617",
