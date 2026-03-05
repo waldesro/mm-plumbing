@@ -26,7 +26,7 @@ const SEO = {
     canonicalPath: "/", // homepage
     title: "Plumber in " + BRAND.serviceAreas.join(", ") + " | M&M Plumbing",
     description:
-        "Trusted plumbing services in " + BRAND.serviceAreas.join(", ") + ", including: drain cleaning, water heater repair, and sewer service.",
+        "Trusted plumbing services in " + BRAND.serviceAreas.join(", ") + ". Including: " + SERVICES.flatMap((s) => s.items).slice(0, 3).join(", ") + ".",
     ogImage: "https://www.msquaredllc.com/og-image.jpg", // add this file when ready (or change path)
 };
 
