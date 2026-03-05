@@ -23,26 +23,24 @@ const BRAND = {
 
 const SEO = {
     domain: "https://www.msquaredllc.com",
-    canonicalPath: "/", // homepage
+    canonicalPath: "/",
     title: "Plumber in " + BRAND.serviceAreas.join(", ") + " | M&M Plumbing",
     description:
         "Trusted plumbing services in " + BRAND.serviceAreas.join(", ") + ". Including: " + SERVICES.map((s) => s.title).join(", ") + ".",
-    ogImage: "https://www.msquaredllc.com/og-image.jpg", // add this file when ready (or change path)
+    ogImage: "https://www.msquaredllc.com/og-image.jpg",
 };
 
 export default function MMPlumbing() {
     const [contactOpen, setContactOpen] = useState(false);
 
-    // Header shrink state
     const [scrolledPastHeroTop, setScrolledPastHeroTop] = useState(false);
 
     useEffect(() => {
         const onScroll = () => {
-            // tweak threshold if you want it to shrink later/sooner
             setScrolledPastHeroTop(window.scrollY > 40);
         };
 
-        onScroll(); // initialize on mount
+        onScroll(); 
         window.addEventListener("scroll", onScroll, { passive: true });
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
@@ -187,14 +185,12 @@ export default function MMPlumbing() {
                         <div className="mx-auto max-w-6xl py-8">
                             <div className="mx-auto max-w-3xl text-center">
                                 <div className="inline-block relative">
-                                    {/* Single H1 (SEO best practice) */}
                                     <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold">
                                         <span className="text-(--plumbing-red)">Reliable Plumbing</span>{" "}
                                         <span className="text-(--plumbing-blue)">Local Experts You Can Trust</span>
                                     </h1>
                                 </div>
 
-                                {/* Local service line (strong local SEO signal) */}
                                 <p className="mt-3 text-base sm:text-lg text-slate-700">
                                     Serving St. Charles, St. Peters, O’Fallon, Wentzville &amp; St. Louis County.
                                 </p>
@@ -205,7 +201,6 @@ export default function MMPlumbing() {
                                     done right the first time.
                                 </p>
 
-                                {/* Trust badges */}
                                 <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-sm text-slate-600">
                                     <span className="rounded-full border border-slate-200 bg-(--plumbing-blue)/70 text-white px-3 py-1">
                                         Licensed, Insured &amp; Bonded Since 2004
