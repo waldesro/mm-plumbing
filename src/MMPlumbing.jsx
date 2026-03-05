@@ -24,9 +24,9 @@ const BRAND = {
 const SEO = {
     domain: "https://www.msquaredllc.com",
     canonicalPath: "/", // homepage
-    title: "Plumber in St. Charles, St. Peters, O’Fallon & Wentzville | M&M Plumbing",
+    title: "Plumber in " + BRAND.serviceAreas.join(", ") + " | M&M Plumbing",
     description:
-        "Trusted plumbing services in in St. Charles, St. Peters, O’Fallon & Wentzville, including: drain cleaning, water heater repair, and sewer service.",
+        "Trusted plumbing services in " + BRAND.serviceAreas.join(", ") + ", including: drain cleaning, water heater repair, and sewer service.",
     ogImage: "https://www.msquaredllc.com/og-image.jpg", // add this file when ready (or change path)
 };
 
