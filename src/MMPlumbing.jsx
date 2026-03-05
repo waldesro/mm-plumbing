@@ -40,7 +40,7 @@ export default function MMPlumbing() {
             setScrolledPastHeroTop(window.scrollY > 40);
         };
 
-        onScroll(); 
+        onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
@@ -186,13 +186,15 @@ export default function MMPlumbing() {
                             <div className="mx-auto max-w-3xl text-center">
                                 <div className="inline-block relative">
                                     <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold">
-                                        <span className="text-(--plumbing-red)">Reliable Plumbing</span>{" "}
-                                        <span className="text-(--plumbing-blue)">Local Experts You Can Trust</span>
+                                        <span className="text-(--plumbing-red)">
+                                            Trusted Plumber in St. Charles and Nearby Areas
+                                        </span>
                                     </h1>
                                 </div>
 
                                 <p className="mt-3 text-base sm:text-lg text-slate-700">
-                                    Serving St. Charles, St. Peters, O’Fallon, Wentzville &amp; St. Louis County.
+                                    Serving St. Charles, St. Peters, O’Fallon, Wentzville, and surrounding
+                                    St. Louis County communities.
                                 </p>
 
                                 <p className="mt-4 text-lg text-slate-600">
