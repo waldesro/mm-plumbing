@@ -10,113 +10,110 @@ import {
   Home,
 } from "lucide-react";
 
-export default function Services() {
-  const services = useMemo(
-    () => [
-      // PLUMBING
-      {
-        category: "Plumbing",
-        title: "General Repairs",
-        icon: Wrench,
-        accent: "red",
-        items: [
-          "Leaky faucets, valves, and supply lines",
-          "Toilet repairs and running water fixes",
-          "Troubleshooting + reliable repairs",
-        ],
-      },
-      {
-        category: "Plumbing",
-        title: "Fixture Installation",
-        icon: ShowerHead,
-        accent: "red",
-        items: [
-          "Faucets, sinks, toilets, and showers",
-          "Replace worn or outdated fixtures",
-          "Clean install + tested before we leave",
-        ],
-      },
-      {
-        category: "Plumbing",
-        title: "Water Heaters",
-        icon: Flame,
-        accent: "red",
-        items: [
-          "Repair or replace standard water heaters",
-          "Hot water issues + safety checks",
-          "Sizing guidance for your home",
-        ],
-      },
-      {
-        category: "Plumbing",
-        title: "New Construction",
-        icon: Building2,
-        accent: "red",
-        items: [
-          "Residential and commercial new builds",
-          "Complete rough-in and final plumbing",
-          "Code-compliant installs and inspections ready",
-        ],
-      },
-      {
-        category: "Plumbing",
-        title: "Leak Detection",
-        icon: Droplets,
-        accent: "red",
-        items: [
-          "Find hidden leaks and water loss fast",
-          "Pinpoint likely failure points",
-          "Recommendations + next-step options",
-        ],
-      },
-
-      {
-        category: "Plumbing",
-        title: "Water Pressure Issues",
-        icon: Gauge,
-        accent: "red",
-        items: [
-          "Low pressure troubleshooting (whole home or single fixture)",
-          "Pressure regulator (PRV) checks and replacement",
-          "Identify restrictions, leaks, or buildup",
-        ],
-      },
-
-      {
-        category: "Drain & Sewer",
-        title: "Garbage Disposal",
-        icon: Trash2,
-        accent: "blue",
-        items: [
-          "Repair, replace, and new installs",
-          "Jam removal and performance checks",
-          "Proper operation + leak inspection",
-        ],
-      },
-      {
-        category: "Drain & Sewer",
-        title: "Residential & Commercial",
-        icon: Home,
-        accent: "blue",
-        items: [
-          "Homes, offices, rentals, and small businesses",
-          "One-time service or ongoing maintenance",
-          "Fast scheduling + dependable work",
-        ],
-      },
+export const services = [
+  // PLUMBING
+  {
+    category: "Plumbing",
+    title: "General Repairs",
+    icon: Wrench,
+    accent: "red",
+    items: [
+      "Leaky faucets, valves, and supply lines",
+      "Toilet repairs and running water fixes",
+      "Troubleshooting + reliable repairs",
     ],
-    []
-  );
+  },
+  {
+    category: "Plumbing",
+    title: "Fixture Installation",
+    icon: ShowerHead,
+    accent: "red",
+    items: [
+      "Faucets, sinks, toilets, and showers",
+      "Replace worn or outdated fixtures",
+      "Clean install + tested before we leave",
+    ],
+  },
+  {
+    category: "Plumbing",
+    title: "Water Heaters",
+    icon: Flame,
+    accent: "red",
+    items: [
+      "Repair or replace standard water heaters",
+      "Hot water issues + safety checks",
+      "Sizing guidance for your home",
+    ],
+  },
+  {
+    category: "Plumbing",
+    title: "New Construction",
+    icon: Building2,
+    accent: "red",
+    items: [
+      "Residential and commercial new builds",
+      "Complete rough-in and final plumbing",
+      "Code-compliant installs and inspections ready",
+    ],
+  },
+  {
+    category: "Plumbing",
+    title: "Leak Detection",
+    icon: Droplets,
+    accent: "red",
+    items: [
+      "Find hidden leaks and water loss fast",
+      "Pinpoint likely failure points",
+      "Recommendations + next-step options",
+    ],
+  },
 
+  {
+    category: "Plumbing",
+    title: "Water Pressure Issues",
+    icon: Gauge,
+    accent: "red",
+    items: [
+      "Low pressure troubleshooting (whole home or single fixture)",
+      "Pressure regulator (PRV) checks and replacement",
+      "Identify restrictions, leaks, or buildup",
+    ],
+  },
+
+  {
+    category: "Drain & Sewer",
+    title: "Garbage Disposal",
+    icon: Trash2,
+    accent: "blue",
+    items: [
+      "Repair, replace, and new installs",
+      "Jam removal and performance checks",
+      "Proper operation + leak inspection",
+    ],
+  },
+  {
+    category: "Drain & Sewer",
+    title: "Residential & Commercial",
+    icon: Home,
+    accent: "blue",
+    items: [
+      "Homes, offices, rentals, and small businesses",
+      "One-time service or ongoing maintenance",
+      "Fast scheduling + dependable work",
+    ],
+  },
+];
+
+export default function Services() {
 
   return (
     <section id="services" className="py-8 px-4 bg-(--plumbing-blue)/5">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="max-w-3xl text-center mx-auto">
-          <p className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
-            Services
-          </p>
+          <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
+            Plumbing &amp; Drain Services
+          </h2>
         </div>
 
         {/* Grid */}
