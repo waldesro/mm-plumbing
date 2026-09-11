@@ -5,6 +5,7 @@ import logo from "@/assets/logo-cropped.png";
 
 import WorkGallery from "@/components/WorkGallery";
 import ReviewSection from "@/components/GoogleReviews";
+import WaterQualitySolutions from "@/components/WaterQualitySolutions";
 import ContactForm from "@/components/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
@@ -288,7 +289,8 @@ export default function MMPlumbing() {
 
                 {/* Services */}
                 <Services />
-
+                {/* Recommendations */}
+                <WaterQualitySolutions />
                 {/* Gallery */}
                 <section className="py-8 px-4 bg-white">
                     <div className="max-w-6xl mx-auto">
