@@ -1,8 +1,15 @@
+import { useState } from "react";
+
 const WaterQualitySolutions = () => {
+  const [open, setOpen] = useState(false);
+
   const ENEVIVE_URL = "https://www.enevive.com/msquaredllc";
 
   const handleEneviveClick = () => {
-    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    if (
+      typeof window !== "undefined" &&
+      typeof window.gtag === "function"
+    ) {
       window.gtag("event", "enevive_referral_click", {
         event_category: "Water Quality",
         event_label: "Enevive Free Water Analysis",
@@ -12,138 +19,236 @@ const WaterQualitySolutions = () => {
   };
 
   return (
-    <section id="water-quality" className="py-8 px-4 bg-(--plumbing-blue)/10">
-      <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-(--plumbing-red)">
-            Water Quality Solutions
-          </h2>
+    <>
+      {/* Floating button */}
+      {!open && (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="
+            fixed
+            z-40
 
-          <h3 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-semibold text-(--plumbing-blue)">
-            Know What&apos;s in Your Water
-          </h3>
+            right-4 bottom-6
 
-          <div className="mt-4 text-lg text-slate-600">
-            A simple first step toward better water for your home.
+            md:right-0
+            md:bottom-auto
+            md:top-1/2
+            md:-translate-y-1/2
+
+            flex items-center gap-2
+
+            rounded-full
+            md:rounded-l-full
+            md:rounded-r-none
+
+            bg-(--plumbing-blue)
+            px-5 py-3
+
+            text-sm font-semibold text-white
+
+            shadow-lg
+            transition
+
+            hover:shadow-xl
+            hover:opacity-95
+          "
+          aria-label="Learn about water quality solutions"
+        >
+          {/* Water drop icon */}
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            className="h-5 w-5"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 3.5S6.5 9.3 6.5 14.2a5.5 5.5 0 0011 0C17.5 9.3 12 3.5 12 3.5z"
+            />
+          </svg>
+
+          Water Quality
+        </button>
+      )}
+
+      {/* Floating card */}
+      {open && (
+        <div
+          className="
+            fixed
+            z-50
+
+            right-4 bottom-4
+
+            w-[calc(100%-2rem)]
+            max-w-sm
+
+            md:right-6
+            md:bottom-auto
+            md:top-1/2
+            md:-translate-y-1/2
+
+            overflow-hidden
+            rounded-2xl
+
+            border border-slate-200
+            bg-white
+
+            shadow-2xl
+          "
+        >
+          {/* Image */}
+          <div className="relative h-48 bg-slate-100">
+            <img
+              src="/images/enevive.jpeg"
+              alt="Child holding a glass of clean drinking water"
+              className="h-full w-full object-cover"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+            {/* Close button */}
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="
+                absolute right-3 top-3
+
+                flex h-9 w-9
+                items-center justify-center
+
+                rounded-full
+                bg-white/95
+
+                text-xl font-semibold
+                text-slate-700
+
+                shadow-sm
+
+                hover:bg-white
+              "
+              aria-label="Close water quality information"
+            >
+              ×
+            </button>
+
+            {/* Recommendation badge */}
+            <div className="absolute bottom-4 left-4">
+              <span
+                className="
+                  rounded-full
+                  bg-(--plumbing-blue)/95
+                  px-3 py-1.5
+
+                  text-xs font-semibold
+                  text-white
+                "
+              >
+                Recommended by M&amp;M Plumbing
+              </span>
+            </div>
           </div>
-        </div>
 
-        {/* Content */}
-        <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <div className="grid lg:grid-cols-2">
-            {/* Image */}
-            <div className="relative min-h-[300px] lg:min-h-[400px] bg-slate-100">
-              <img
-                src="/images/enevive.jpeg"
-                alt="Child holding a glass of clean drinking water"
-                className="absolute inset-0 h-full w-full object-cover object-center"
-              />
+          {/* Content */}
+          <div className="p-6">
+            <p
+              className="
+                text-xs font-bold uppercase
+                tracking-wider
+                text-(--plumbing-red)
+              "
+            >
+              Water Quality Solutions
+            </p>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <h2
+              className="
+                mt-2
+                text-2xl font-bold
+                text-(--plumbing-blue)
+              "
+            >
+              Know What&apos;s in Your Water
+            </h2>
 
-              <div className="absolute bottom-5 left-5">
-                <span className="rounded-full bg-(--plumbing-blue)/90 px-4 py-2 text-sm font-semibold text-white shadow-sm">
-                  Recommended by M&amp;M Plumbing
-                </span>
+            <p className="mt-3 leading-relaxed text-slate-600">
+              M&amp;M Plumbing recommends Enevive for homeowners who want to
+              better understand their home&apos;s water quality and explore
+              available treatment options.
+            </p>
+
+            <div className="mt-5 space-y-2 text-sm text-slate-700">
+              <div className="flex gap-2">
+                <span className="font-bold text-(--plumbing-blue)">✓</span>
+                Complimentary water analysis
+              </div>
+
+              <div className="flex gap-2">
+                <span className="font-bold text-(--plumbing-blue)">✓</span>
+                Learn about your home&apos;s water quality
+              </div>
+
+              <div className="flex gap-2">
+                <span className="font-bold text-(--plumbing-blue)">✓</span>
+                Review available treatment options
               </div>
             </div>
 
-            {/* Text */}
-            <div className="p-6 sm:p-8 lg:p-10 flex items-center">
-              <div>
-                <p className="text-sm font-bold uppercase tracking-wider text-(--plumbing-red)">
-                  Complimentary Water Analysis
-                </p>
+            {/* CTA */}
+            <a
+              href={ENEVIVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleEneviveClick}
+              className="
+                mt-6
 
-                <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-(--plumbing-blue)">
-                  Start With Better Information
-                </h3>
+                inline-flex w-full
+                items-center justify-center
 
-                <div className="mt-5 space-y-4 text-slate-700 leading-relaxed">
-                  <p>
-                    M&amp;M Plumbing recommends Enevive for homeowners who want
-                    to better understand the quality of the water they use every
-                    day.
-                  </p>
+                rounded-full
 
-                  <p>
-                    Begin with a complimentary water analysis and explore
-                    available solutions based on your home&apos;s specific
-                    water-quality needs.
-                  </p>
-                </div>
+                bg-(--plumbing-blue)
 
-                {/* Benefits */}
-                <div className="mt-6 space-y-3">
-                  <div className="flex items-center gap-3 text-slate-700">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-(--plumbing-blue) text-white">
-                      ✓
-                    </span>
-                    <span>Learn more about your home&apos;s water quality</span>
-                  </div>
+                px-5 py-3
 
-                  <div className="flex items-center gap-3 text-slate-700">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-(--plumbing-blue) text-white">
-                      ✓
-                    </span>
-                    <span>Review available treatment options</span>
-                  </div>
+                font-semibold
+                text-white
 
-                  <div className="flex items-center gap-3 text-slate-700">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-(--plumbing-blue) text-white">
-                      ✓
-                    </span>
-                    <span>No-obligation consultation</span>
-                  </div>
-                </div>
+                shadow-sm
+                transition
 
-                {/* CTA */}
-                <div className="mt-8">
-                  <a
-                    href={ENEVIVE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={handleEneviveClick}
-                    className="
-                      inline-flex items-center justify-center
-                      rounded-full
-                      px-6 py-3
-                      font-semibold
-                      bg-(--plumbing-blue)
-                      text-white
-                      shadow-sm
-                      hover:shadow-md
-                      hover:opacity-90
-                      transition
-                    "
-                  >
-                    Get Your Free Water Analysis
-                    <svg
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="ml-2 h-5 w-5"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.22 14.78a.75.75 0 010-1.06L8.94 10 5.22 6.28a.75.75 0 111.06-1.06l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0zm5 0a.75.75 0 010-1.06L13.94 10l-3.72-3.72a.75.75 0 111.06-1.06l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </a>
+                hover:shadow-md
+                hover:opacity-90
+              "
+            >
+              Get Your Free Water Analysis
 
-                  <p className="mt-3 text-sm text-slate-500">
-                    You&apos;ll be redirected to Enevive&apos;s M&amp;M Plumbing
-                    partner page.
-                  </p>
-                </div>
-              </div>
-            </div>
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="ml-2 h-5 w-5"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.22 14.78a.75.75 0 010-1.06L8.94 10 5.22 6.28a.75.75 0 111.06-1.06l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0zm5 0a.75.75 0 010-1.06L13.94 10l-3.72-3.72a.75.75 0 111.06-1.06l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+
+            <p className="mt-3 text-center text-xs text-slate-500">
+              Opens Enevive&apos;s M&amp;M Plumbing partner page.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      )}
+    </>
   );
 };
 
