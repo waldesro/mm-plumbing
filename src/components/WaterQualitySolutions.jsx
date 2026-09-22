@@ -53,15 +53,14 @@ const WaterQualitySolutions = () => {
             hover:shadow-xl
             hover:opacity-95
           "
-          aria-label="Learn about water quality solutions"
+          aria-label="Do you know what's in your water?"
         >
-          {/* Water drop icon */}
           <svg
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.8"
-            className="h-5 w-5"
+            className="h-5 w-5 flex-shrink-0"
             aria-hidden="true"
           >
             <path
@@ -71,7 +70,11 @@ const WaterQualitySolutions = () => {
             />
           </svg>
 
-          Water Quality
+          <span className="leading-tight text-left">
+            Do you know what&apos;s
+            <br />
+            in your water?
+          </span>
         </button>
       )}
 
@@ -117,18 +120,13 @@ const WaterQualitySolutions = () => {
               onClick={() => setOpen(false)}
               className="
                 absolute right-3 top-3
-
                 flex h-9 w-9
                 items-center justify-center
-
                 rounded-full
                 bg-white/95
-
                 text-xl font-semibold
                 text-slate-700
-
                 shadow-sm
-
                 hover:bg-white
               "
               aria-label="Close water quality information"
@@ -136,14 +134,13 @@ const WaterQualitySolutions = () => {
               ×
             </button>
 
-            {/* Recommendation badge */}
+            {/* Badge */}
             <div className="absolute bottom-4 left-4">
               <span
                 className="
                   rounded-full
                   bg-(--plumbing-blue)/95
                   px-3 py-1.5
-
                   text-xs font-semibold
                   text-white
                 "
@@ -206,22 +203,15 @@ const WaterQualitySolutions = () => {
               onClick={handleEneviveClick}
               className="
                 mt-6
-
                 inline-flex w-full
                 items-center justify-center
-
                 rounded-full
-
                 bg-(--plumbing-blue)
-
                 px-5 py-3
-
                 font-semibold
                 text-white
-
                 shadow-sm
                 transition
-
                 hover:shadow-md
                 hover:opacity-90
               "
